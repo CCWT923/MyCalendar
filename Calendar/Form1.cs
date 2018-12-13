@@ -69,7 +69,7 @@ namespace Calendar
             //将这个月的前面的日历块内容情况，否则还会显示在那里
             for(int i = firstDayWeekNum - 1; i >= 0; i--)
             {
-                calendarBlock = (LunisolarCalendar)tableLayoutPanel1.GetControlFromPosition(i,1);
+                calendarBlock = (LunisolarCalendar)Table_CalendarBlock.GetControlFromPosition(i,1);
                 calendarBlock.Clear();
             }
 
@@ -80,7 +80,7 @@ namespace Calendar
             for(int x = 0; x < daysInMonth; x++)
             {
                 //从指定的行列获取一个日历块
-                calendarBlock = (LunisolarCalendar)tableLayoutPanel1.GetControlFromPosition(column, row);
+                calendarBlock = (LunisolarCalendar)Table_CalendarBlock.GetControlFromPosition(column, row);
                 //公历文本
                 calendarBlock.SolarText = (x + 1).ToString();
 
@@ -89,11 +89,11 @@ namespace Calendar
                 //农历日名称
                 if(lunarDate.Day  == 1)
                 {
-                    lunarDayName = lunarHelper.GetLunarData(LunarDate.LunarDataType.MonthName, lunarDate.Month - 1);
+                    lunarDayName = lunarHelper.GetLunarData(LunarDate.LunarDataType.MONTHNAME, lunarDate.Month - 1);
                 }
                 else
                 {
-                    lunarDayName = lunarHelper.GetLunarData(LunarDate.LunarDataType.DayName, lunarDate.Day - 1);
+                    lunarDayName = lunarHelper.GetLunarData(LunarDate.LunarDataType.DAYNAME, lunarDate.Day - 1);
                 }
                 //TODO：农历节日
                 if(lunarDate.Month == 8 && lunarDate.Day == 15)
@@ -118,18 +118,18 @@ namespace Calendar
                 }
                 //递增列，如果达到最大列，则重置为0，开始下一行的循环
                 column++;
-                if(column >= tableLayoutPanel1.ColumnCount)
+                if(column >= Table_CalendarBlock.ColumnCount)
                 {
                     column = 0;
                     row++;
                 }
 
                 //将最后剩下的清除，比如3月有31日，但是2月只有28天，如果从3月切换到2月，就会残留3月的最后几天
-                for(int i = row; i < tableLayoutPanel1.RowCount; i++)
+                for(int i = row; i < Table_CalendarBlock.RowCount; i++)
                 {
-                    for(int j = column; j < tableLayoutPanel1.ColumnCount; j++)
+                    for(int j = column; j < Table_CalendarBlock.ColumnCount; j++)
                     {
-                        calendarBlock = (LunisolarCalendar)tableLayoutPanel1.GetControlFromPosition(j, i);
+                        calendarBlock = (LunisolarCalendar)Table_CalendarBlock.GetControlFromPosition(j, i);
                         calendarBlock.Clear();
                     }
                 }
@@ -154,8 +154,17 @@ namespace Calendar
                 year -= 1;
             }
             weekNum = (day + 2 * month + 3 * (month + 1) / 5 + year + year / 4 - year / 100 + year / 400) % 7;
-
             return weekNum;
+        }
+        /// <summary>
+        /// 获取中文星期名称
+        /// </summary>
+        /// <param name="weekday">指定一个星期几的索引</param>
+        /// <returns></returns>
+        public string GetCNWeekName(int weekday)
+        {
+            string[] cnWeekName = new string[] { "一", "二", "三", "四", "五", "六", "日" };
+            return cnWeekName[weekday];
         }
         #endregion
 
@@ -218,6 +227,25 @@ namespace Calendar
         private void timer1_Tick(object sender, EventArgs e)
         {
             Lbl_Time.Text = string.Format(DateTime.Now.ToLongTimeString(), "HH:MM:SS");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int day = DateTime.Now.Day;
+            Lbl_SolarDayInfo.Text = day < 10 ? "0" + day : day.ToString();
+            Lbl_SolarDate.Text = DateTime.Now.ToString("yyyy年MM月dd日");
+            Lbl_CNWeekName.Text = "星期" + GetCNWeekName(GetWeekNumber(DateTime.Now.Year, DateTime.Now.Month, day));
+            
+        }
+        /// <summary>
+        /// 返回今天
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_ReturnToday_Click(object sender, EventArgs e)
+        {
+            Cbo_Years.SelectedItem = DateTime.Now.Year.ToString();
+            Cbo_Months.SelectedItem = DateTime.Now.Month.ToString();
         }
     }
 }

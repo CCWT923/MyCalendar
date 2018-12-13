@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
 
 namespace Calendar
 {
-    class LunarDate
+    public class LunarDate
     {
         #region 常量定义
         private string[] tianGan = { "甲","乙","丙","丁","戊","己","庚","辛","壬","癸" };
-        private string[] diZhi = { "子丑寅卯辰巳午未申酉戌亥" };
-        private string[] shengXiao = { "鼠牛虎兔龙蛇马羊猴鸡狗猪" };
+        private string[] diZhi = { "子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"};
+        private string[] shengXiao = { "鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪" };
         private string[] nameOfLunarMonth = {"正月","二月","三月","四月","五月","六月","七月","八月","九月","十月","冬月","腊月" };
         private string[] nameOfLunarDay = {"初一","初二","初三","初四","初五","初六","初七","初八","初九","初十","十一","十二",
             "十三","十四","十五","十六","十七","十八","十九","廿","廿一","廿二","廿三","廿四","廿五","廿六","廿七","廿八","廿九","三十" };
         private string[] sixtyJiaZi = new string[60];
+        
         #endregion
 
         ChineseLunisolarCalendar clc;
@@ -22,21 +22,21 @@ namespace Calendar
         {
             clc = new ChineseLunisolarCalendar();
 
-            #region 六十甲子
-            int count = 0;
-            for(int i = 0; i < tianGan.Length; i++)
+            #region 生成六十甲子
+            int tg = 0;
+            int dz = 0;
+            for (int count = 0; count < sixtyJiaZi.Length; count++)
             {
-                for(int j = 0; j < diZhi.Length; j++)
+                sixtyJiaZi[count] = tianGan[tg] + "" + diZhi[dz];
+                tg++;
+                dz++;
+                if(tg == 10)
                 {
-                    sixtyJiaZi[count] = tianGan[i++] + "" + diZhi[j++];
-                    if(i >= 10)
-                    {
-                        i = 0;
-                    }
-                    if(j >= 12)
-                    {
-                        j = 0;
-                    }
+                    tg = 0;
+                }
+                if(dz == 12)
+                {
+                    dz = 0;
                 }
             }
             #endregion
@@ -97,27 +97,27 @@ namespace Calendar
         #region 获取天干、地支、生肖、月份、日期、六十甲子
         public string GetLunarData( LunarDataType lunarType, int index)
         {
-            if(lunarType == LunarDataType.CelestianStem)
+            if(lunarType == LunarDataType.CELESTIANSTEM)
             {
                 return tianGan[index];
             }
-            else if(lunarType == LunarDataType.TerrestrialBranch)
+            else if(lunarType == LunarDataType.TERRESTRIALBRANCH)
             {
                 return diZhi[index];
             }
-            else if(lunarType == LunarDataType.SexagenaryYear)
+            else if(lunarType == LunarDataType.SEXAGENARYYEAR)
             {
                 return sixtyJiaZi[index];
             }
-            else if(lunarType == LunarDataType.ChineseZodiac)
+            else if(lunarType == LunarDataType.CHINESEZODIAC)
             {
                 return shengXiao[index];
             }
-            else if(lunarType == LunarDataType.DayName)
+            else if(lunarType == LunarDataType.DAYNAME)
             {
                 return nameOfLunarDay[index];
             }
-            else if(lunarType == LunarDataType.MonthName)
+            else if(lunarType == LunarDataType.MONTHNAME)
             {
                 return nameOfLunarMonth[index];
             }
@@ -132,12 +132,30 @@ namespace Calendar
         ///
         public enum LunarDataType:byte
         {
-            CelestianStem = 1,
-            TerrestrialBranch = 2,
-            ChineseZodiac = 3,
-            SexagenaryYear = 4,
-            MonthName = 5,
-            DayName = 6
+            /// <summary>
+            /// 天干
+            /// </summary>
+            CELESTIANSTEM = 1,
+            /// <summary>
+            /// 地支
+            /// </summary>
+            TERRESTRIALBRANCH = 2,
+            /// <summary>
+            /// 生肖
+            /// </summary>
+            CHINESEZODIAC = 3,
+            /// <summary>
+            /// 六十甲子
+            /// </summary>
+            SEXAGENARYYEAR = 4,
+            /// <summary>
+            /// 月份名称
+            /// </summary>
+            MONTHNAME = 5,
+            /// <summary>
+            /// 日名称
+            /// </summary>
+            DAYNAME = 6
         }
         #endregion
 
@@ -168,7 +186,7 @@ namespace Calendar
         #region 计算指定年份的干支
         public string GetGanZhi(int year)
         {
-            return GetLunarData(LunarDataType.SexagenaryYear, clc.GetSexagenaryYear(new DateTime(year, 1, 1)) - 1);
+            return GetLunarData(LunarDataType.SEXAGENARYYEAR, clc.GetSexagenaryYear(new DateTime(year, 1, 1)) - 1);
         }
         #endregion
     }
