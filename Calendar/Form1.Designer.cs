@@ -70,13 +70,13 @@
             this.lunisolarCalendar12 = new CalendarBlock.LunisolarCalendar();
             this.lunisolarCalendar13 = new CalendarBlock.LunisolarCalendar();
             this.lunisolarCalendar14 = new CalendarBlock.LunisolarCalendar();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Lbl_Sunday = new System.Windows.Forms.Label();
+            this.Lbl_Saturday = new System.Windows.Forms.Label();
+            this.Lbl_Friday = new System.Windows.Forms.Label();
+            this.Lbl_Thursday = new System.Windows.Forms.Label();
+            this.Lbl_Wednesday = new System.Windows.Forms.Label();
+            this.Lbl_Tuesday = new System.Windows.Forms.Label();
+            this.Lbl_Monday = new System.Windows.Forms.Label();
             this.lunisolarCalendar1 = new CalendarBlock.LunisolarCalendar();
             this.lunisolarCalendar2 = new CalendarBlock.LunisolarCalendar();
             this.lunisolarCalendar3 = new CalendarBlock.LunisolarCalendar();
@@ -84,7 +84,7 @@
             this.lunisolarCalendar5 = new CalendarBlock.LunisolarCalendar();
             this.lunisolarCalendar6 = new CalendarBlock.LunisolarCalendar();
             this.lunisolarCalendar7 = new CalendarBlock.LunisolarCalendar();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Panel_Title = new System.Windows.Forms.Panel();
             this.lbl_Month = new System.Windows.Forms.Label();
             this.lbl_Year = new System.Windows.Forms.Label();
             this.Cbo_Months = new System.Windows.Forms.ComboBox();
@@ -97,7 +97,7 @@
             this.Btn_ReturnToday = new System.Windows.Forms.Button();
             this.Table_MainBackground.SuspendLayout();
             this.Table_CalendarBlock.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.Panel_Title.SuspendLayout();
             this.SuspendLayout();
             // 
             // Table_MainBackground
@@ -222,13 +222,13 @@
             this.Table_CalendarBlock.Controls.Add(this.lunisolarCalendar12, 4, 2);
             this.Table_CalendarBlock.Controls.Add(this.lunisolarCalendar13, 5, 2);
             this.Table_CalendarBlock.Controls.Add(this.lunisolarCalendar14, 6, 2);
-            this.Table_CalendarBlock.Controls.Add(this.label7, 6, 0);
-            this.Table_CalendarBlock.Controls.Add(this.label6, 5, 0);
-            this.Table_CalendarBlock.Controls.Add(this.label5, 4, 0);
-            this.Table_CalendarBlock.Controls.Add(this.label4, 3, 0);
-            this.Table_CalendarBlock.Controls.Add(this.label3, 2, 0);
-            this.Table_CalendarBlock.Controls.Add(this.label2, 1, 0);
-            this.Table_CalendarBlock.Controls.Add(this.label1, 0, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Sunday, 6, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Saturday, 5, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Friday, 4, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Thursday, 3, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Wednesday, 2, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Tuesday, 1, 0);
+            this.Table_CalendarBlock.Controls.Add(this.Lbl_Monday, 0, 0);
             this.Table_CalendarBlock.Controls.Add(this.lunisolarCalendar1, 0, 1);
             this.Table_CalendarBlock.Controls.Add(this.lunisolarCalendar2, 1, 1);
             this.Table_CalendarBlock.Controls.Add(this.lunisolarCalendar3, 2, 1);
@@ -1021,105 +1021,105 @@
             this.lunisolarCalendar14.TabIndex = 83;
             this.lunisolarCalendar14.TodayColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             // 
-            // label7
+            // Lbl_Sunday
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(432, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 45);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "日";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Sunday.AutoSize = true;
+            this.Lbl_Sunday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Sunday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Sunday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Sunday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_Sunday.Location = new System.Drawing.Point(432, 0);
+            this.Lbl_Sunday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Sunday.Name = "Lbl_Sunday";
+            this.Lbl_Sunday.Size = new System.Drawing.Size(73, 45);
+            this.Lbl_Sunday.TabIndex = 6;
+            this.Lbl_Sunday.Text = "日";
+            this.Lbl_Sunday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // Lbl_Saturday
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(360, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 45);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "六";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Saturday.AutoSize = true;
+            this.Lbl_Saturday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Saturday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Saturday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Saturday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Lbl_Saturday.Location = new System.Drawing.Point(360, 0);
+            this.Lbl_Saturday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Saturday.Name = "Lbl_Saturday";
+            this.Lbl_Saturday.Size = new System.Drawing.Size(72, 45);
+            this.Lbl_Saturday.TabIndex = 5;
+            this.Lbl_Saturday.Text = "六";
+            this.Lbl_Saturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // Lbl_Friday
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(288, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 45);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "五";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Friday.AutoSize = true;
+            this.Lbl_Friday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Friday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Friday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Friday.Location = new System.Drawing.Point(288, 0);
+            this.Lbl_Friday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Friday.Name = "Lbl_Friday";
+            this.Lbl_Friday.Size = new System.Drawing.Size(72, 45);
+            this.Lbl_Friday.TabIndex = 4;
+            this.Lbl_Friday.Text = "五";
+            this.Lbl_Friday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // Lbl_Thursday
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(216, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 45);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "四";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Thursday.AutoSize = true;
+            this.Lbl_Thursday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Thursday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Thursday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Thursday.Location = new System.Drawing.Point(216, 0);
+            this.Lbl_Thursday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Thursday.Name = "Lbl_Thursday";
+            this.Lbl_Thursday.Size = new System.Drawing.Size(72, 45);
+            this.Lbl_Thursday.TabIndex = 3;
+            this.Lbl_Thursday.Text = "四";
+            this.Lbl_Thursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // Lbl_Wednesday
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(144, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 45);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "三";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Wednesday.AutoSize = true;
+            this.Lbl_Wednesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Wednesday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Wednesday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Wednesday.Location = new System.Drawing.Point(144, 0);
+            this.Lbl_Wednesday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Wednesday.Name = "Lbl_Wednesday";
+            this.Lbl_Wednesday.Size = new System.Drawing.Size(72, 45);
+            this.Lbl_Wednesday.TabIndex = 2;
+            this.Lbl_Wednesday.Text = "三";
+            this.Lbl_Wednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // Lbl_Tuesday
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(72, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 45);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "二";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Tuesday.AutoSize = true;
+            this.Lbl_Tuesday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Tuesday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Tuesday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Tuesday.Location = new System.Drawing.Point(72, 0);
+            this.Lbl_Tuesday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Tuesday.Name = "Lbl_Tuesday";
+            this.Lbl_Tuesday.Size = new System.Drawing.Size(72, 45);
+            this.Lbl_Tuesday.TabIndex = 1;
+            this.Lbl_Tuesday.Text = "二";
+            this.Lbl_Tuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // Lbl_Monday
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "一";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Monday.AutoSize = true;
+            this.Lbl_Monday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Lbl_Monday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Lbl_Monday.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Lbl_Monday.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_Monday.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Monday.Name = "Lbl_Monday";
+            this.Lbl_Monday.Size = new System.Drawing.Size(72, 45);
+            this.Lbl_Monday.TabIndex = 0;
+            this.Lbl_Monday.Text = "一";
+            this.Lbl_Monday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lunisolarCalendar1
             // 
@@ -1275,22 +1275,22 @@
             this.lunisolarCalendar7.TabIndex = 76;
             this.lunisolarCalendar7.TodayColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             // 
-            // panel1
+            // Panel_Title
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Controls.Add(this.Btn_ReturnToday);
-            this.panel1.Controls.Add(this.lbl_Month);
-            this.panel1.Controls.Add(this.lbl_Year);
-            this.panel1.Controls.Add(this.Cbo_Months);
-            this.panel1.Controls.Add(this.Cbo_Years);
-            this.panel1.Controls.Add(this.Lbl_Time);
-            this.panel1.Controls.Add(this.Btn_MiniSize);
-            this.panel1.Controls.Add(this.btn_Close);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(715, 39);
-            this.panel1.TabIndex = 0;
+            this.Panel_Title.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Panel_Title.Controls.Add(this.Btn_ReturnToday);
+            this.Panel_Title.Controls.Add(this.lbl_Month);
+            this.Panel_Title.Controls.Add(this.lbl_Year);
+            this.Panel_Title.Controls.Add(this.Cbo_Months);
+            this.Panel_Title.Controls.Add(this.Cbo_Years);
+            this.Panel_Title.Controls.Add(this.Lbl_Time);
+            this.Panel_Title.Controls.Add(this.Btn_MiniSize);
+            this.Panel_Title.Controls.Add(this.btn_Close);
+            this.Panel_Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_Title.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Title.Name = "Panel_Title";
+            this.Panel_Title.Size = new System.Drawing.Size(715, 39);
+            this.Panel_Title.TabIndex = 0;
             // 
             // lbl_Month
             // 
@@ -1429,9 +1429,9 @@
             this.Btn_ReturnToday.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ReturnToday.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Btn_ReturnToday.ForeColor = System.Drawing.Color.White;
-            this.Btn_ReturnToday.Location = new System.Drawing.Point(304, 1);
+            this.Btn_ReturnToday.Location = new System.Drawing.Point(304, 5);
             this.Btn_ReturnToday.Name = "Btn_ReturnToday";
-            this.Btn_ReturnToday.Size = new System.Drawing.Size(38, 38);
+            this.Btn_ReturnToday.Size = new System.Drawing.Size(38, 28);
             this.Btn_ReturnToday.TabIndex = 5;
             this.Btn_ReturnToday.Text = "今";
             this.Btn_ReturnToday.UseVisualStyleBackColor = true;
@@ -1444,7 +1444,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(715, 501);
             this.Controls.Add(this.Table_MainBackground);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Panel_Title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1454,14 +1454,14 @@
             this.Table_MainBackground.PerformLayout();
             this.Table_CalendarBlock.ResumeLayout(false);
             this.Table_CalendarBlock.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Panel_Title.ResumeLayout(false);
+            this.Panel_Title.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Panel_Title;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Button Btn_MiniSize;
         private System.Windows.Forms.ComboBox Cbo_Years;
@@ -1469,13 +1469,13 @@
         private System.Windows.Forms.Label lbl_Month;
         private System.Windows.Forms.Label lbl_Year;
         private System.Windows.Forms.TableLayoutPanel Table_CalendarBlock;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Lbl_Sunday;
+        private System.Windows.Forms.Label Lbl_Saturday;
+        private System.Windows.Forms.Label Lbl_Friday;
+        private System.Windows.Forms.Label Lbl_Thursday;
+        private System.Windows.Forms.Label Lbl_Wednesday;
+        private System.Windows.Forms.Label Lbl_Tuesday;
+        private System.Windows.Forms.Label Lbl_Monday;
         private System.Windows.Forms.TableLayoutPanel Table_MainBackground;
         private System.Windows.Forms.Label Lbl_SolarDate;
         private System.Windows.Forms.Label Lbl_SolarDayInfo;
