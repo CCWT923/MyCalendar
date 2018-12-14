@@ -15,18 +15,25 @@ namespace CalendarBlock
             InitializeComponent();
             this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
-            //初始化
+            //公历字体颜色
             LunarFontColor = Color.FromArgb(255,100,100,100);
+            //农历字体颜色
             SolarFontColor = Color.FromArgb(255,70,70,70);
+            //是否有备忘
             HasNote = false;
-            HightlightBackColor = Color.FromArgb(255,255,219,219);
-            DefaultBackColor = Color.White;
-            SolarText = "16";
-            LunarText = "正月";
-            TodayColor = Color.FromArgb(255, 255, 25, 25);
+            //高亮色，鼠标经过
+            HighlightBackColor = Color.FromArgb(255,235,235,235);
+            HighlightTodayBackcolor = Color.FromArgb(255, 107, 169, 246);
+            //默认背景色
+            DefaultBackColor = Color.FromArgb(255,255,255,255);
+            //今天的背景色
+            TodayColor = Color.FromArgb(255, 181, 211, 248);
             this.IsToday = false;
-            SolorFont = new Font("宋体",15);
-            LunarFont = new Font("微软雅黑",10);
+            //公历字体
+            SolorFont = new Font("Arial",13);
+            //农历字体
+            LunarFont = new Font("楷体",10);
+            //选中的颜色
             SelectedColor = Color.FromArgb(255,220,220,220);
         }
 
@@ -48,7 +55,9 @@ namespace CalendarBlock
         //是否有提醒
         private bool _hasNote;
         //高亮背景颜色
-        private Color _hightlightBackColor;
+        private Color _highlightBackColor;
+        //是今天，高亮
+        private Color _highlightTodayBackcolor;
         //默认背景颜色
         private Color _defaultBackColor;
         //公历文本
@@ -72,8 +81,8 @@ namespace CalendarBlock
             if(IsToday)
             {
                 this.BackColor = TodayColor;
-                lbl_Lunar.ForeColor = Color.White;
-                lbl_Solar.ForeColor = Color.White;
+                lbl_Lunar.ForeColor = Color.Black;
+                lbl_Solar.ForeColor = Color.Black;
             }
             else
             {
@@ -90,14 +99,14 @@ namespace CalendarBlock
             }
 
             //切换选中的背景色
-            if(this.IsSelected == true)
-            {
-                this.BackColor = SelectedColor;
-            }
-            else
-            {
-                this.BackColor = DefaultBackColor;
-            }
+            //if(this.IsSelected == true)
+            //{
+            //    this.BackColor = SelectedColor;
+            //}
+            //else
+            //{
+            //    this.BackColor = DefaultBackColor;
+            //}
             base.OnPaint(e);
         }
         #endregion
@@ -196,16 +205,26 @@ namespace CalendarBlock
             }
         }
         [Category("外观")]
-        public Color HightlightBackColor
+        public Color HighlightBackColor
         {
             get
             {
-                return _hightlightBackColor;
+                return _highlightBackColor;
             }
             set
             {
-                _hightlightBackColor = value;
-                //RePaint();
+                _highlightBackColor = value;
+                RePaint();
+            }
+        }
+        [Category("外观"),Description("鼠标经过时的高亮色")]
+        public Color HighlightTodayBackcolor
+        {
+            get => _highlightTodayBackcolor;
+            set
+            {
+                _highlightTodayBackcolor = value;
+                RePaint();
             }
         }
         [Category("外观")]
@@ -233,6 +252,7 @@ namespace CalendarBlock
             {
                 _solarText = value;
                 lbl_Solar.Text = value;
+                RePaint();
             }
         }
 
@@ -247,9 +267,12 @@ namespace CalendarBlock
             {
                 _lunarText = value;
                 lbl_Lunar.Text = value;
+                RePaint();
             }
         }
-
+        /// <summary>
+        /// 是否是今天
+        /// </summary>
         public bool IsToday
         {
             get
@@ -273,11 +296,18 @@ namespace CalendarBlock
         #region 鼠标进入时高亮，离开时恢复
         private void MouseEnter_Hightlight(object sender, EventArgs e)
         {
-            if(this.lbl_Lunar.Text == string.Empty && this.lbl_Solar.Text == string.Empty)
+            //if(this.lbl_Lunar.Text == string.Empty && this.lbl_Solar.Text == string.Empty)
+            //{
+            //    return;
+            //}
+            if(this.IsToday)
             {
-                return;
+                this.BackColor = HighlightTodayBackcolor;
             }
-            this.BackColor = HightlightBackColor;
+            else
+            {
+                this.BackColor = HighlightBackColor;
+            }
         }
 
         private void MouseLeave_NotHighlight(object sender, EventArgs e)
@@ -289,27 +319,25 @@ namespace CalendarBlock
                 this.BackColor = DefaultBackColor;
         }
         #endregion
+
         #region 清除所有内容并隐藏
         /// <summary>
         /// 清除所有内容并隐藏控件
         /// </summary>
         public void Clear()
         {
-            this.lbl_Solar.Text = string.Empty;
-            this.lbl_Lunar.Text = string.Empty;
+            //this.lbl_Solar.Text = string.Empty;
+            //this.lbl_Lunar.Text = string.Empty;
+            this.Visible = false;
         }
         #endregion
 
-        private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 取消隐藏
+        /// </summary>
+        public void ShowControl()
         {
-            if(this.IsSelected == false)
-            {
-                this.IsSelected = true;
-            }
-            else
-            {
-                this.IsSelected = false;
-            }
+            this.Visible = true;
         }
     }
 }

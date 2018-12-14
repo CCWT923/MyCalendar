@@ -6,11 +6,11 @@ namespace Calendar
     public class LunarDate
     {
         #region 常量定义
-        private string[] tianGan = { "甲","乙","丙","丁","戊","己","庚","辛","壬","癸" };
-        private string[] diZhi = { "子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"};
-        private string[] shengXiao = { "鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪" };
-        private string[] nameOfLunarMonth = {"正月","二月","三月","四月","五月","六月","七月","八月","九月","十月","冬月","腊月" };
-        private string[] nameOfLunarDay = {"初一","初二","初三","初四","初五","初六","初七","初八","初九","初十","十一","十二",
+        private readonly string[] tianGan = { "甲","乙","丙","丁","戊","己","庚","辛","壬","癸" };
+        private readonly string[] diZhi = { "子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"};
+        private readonly string[] shengXiao = { "鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪" };
+        private readonly string[] nameOfLunarMonth = {"正月","二月","三月","四月","五月","六月","七月","八月","九月","十月","冬月","腊月" };
+        private readonly string[] nameOfLunarDay = {"初一","初二","初三","初四","初五","初六","初七","初八","初九","初十","十一","十二",
             "十三","十四","十五","十六","十七","十八","十九","廿","廿一","廿二","廿三","廿四","廿五","廿六","廿七","廿八","廿九","三十" };
         private string[] sixtyJiaZi = new string[60];
         

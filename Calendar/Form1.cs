@@ -21,6 +21,7 @@ namespace Calendar
             Cbo_Years.SelectedIndex = Cbo_Years.Items.IndexOf(DateTime.Now.Year.ToString());
             Cbo_Months.SelectedIndex = DateTime.Now.Month - 1;
             IsInitialized = true;
+            InitBlocks();
             FillTable(DateTime.Now.Year,DateTime.Now.Month,1);
             timer1.Start();
         }
@@ -48,6 +49,20 @@ namespace Calendar
         }
 
         LunarDate lunarHelper = new LunarDate();
+        /// <summary>
+        /// 初始化日历块
+        /// </summary>
+        private void InitBlocks()
+        {
+            for(int i = 1; i < Table_CalendarBlock.RowCount;i++)
+            {
+                for(int j = 0; j < Table_CalendarBlock.ColumnCount; j++)
+                {
+                    LunisolarCalendar block = new LunisolarCalendar();
+                    Table_CalendarBlock.Controls.Add(block, j, i);
+                }
+            }
+        }
 
         #region 填充日历
         public void FillTable(int year, int month, int day)
@@ -70,7 +85,11 @@ namespace Calendar
             for(int i = firstDayWeekNum - 1; i >= 0; i--)
             {
                 calendarBlock = (LunisolarCalendar)Table_CalendarBlock.GetControlFromPosition(i,1);
-                calendarBlock.Clear();
+                if (!(calendarBlock is null))
+                {
+                    //隐藏
+                    calendarBlock.Clear();
+                }
             }
 
             //农历日的名称
@@ -123,6 +142,7 @@ namespace Calendar
                     column = 0;
                     row++;
                 }
+                calendarBlock.ShowControl();
 
                 //将最后剩下的清除，比如3月有31日，但是2月只有28天，如果从3月切换到2月，就会残留3月的最后几天
                 for(int i = row; i < Table_CalendarBlock.RowCount; i++)
@@ -208,13 +228,38 @@ namespace Calendar
 
         #endregion
 
+        #region 选择了其他年份或月份
+        /// <summary>
+        /// 选择了其他月份
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!IsInitialized)
                 return;
             FillTable(DateTime.Now.Year, Cbo_Months.SelectedIndex + 1, 1);
+            if(int.Parse(Cbo_Months.SelectedItem.ToString()) != DateTime.Now.Month)
+            {
+                PicBox_ReturnToday.Visible = true;
+            }
+            else
+            {
+                if(int.Parse(Cbo_Years.SelectedItem.ToString()) != DateTime.Now.Year)
+                {
+                    PicBox_ReturnToday.Visible = true;
+                }
+                else
+                {
+                    PicBox_ReturnToday.Visible = false;
+                }
+            }
         }
-
+        /// <summary>
+        /// 选择其他年份
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Cbo_Years_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(!IsInitialized)
@@ -222,7 +267,23 @@ namespace Calendar
                 return;
             }
             FillTable(int.Parse(Cbo_Years.SelectedItem.ToString()), Cbo_Months.SelectedIndex + 1, 1);
+            if (int.Parse(Cbo_Years.SelectedItem.ToString()) != DateTime.Now.Year)
+            {
+                PicBox_ReturnToday.Visible = true;
+            }
+            else
+            {
+                if (int.Parse(Cbo_Months.SelectedItem.ToString()) != DateTime.Now.Month)
+                {
+                    PicBox_ReturnToday.Visible = true;
+                }
+                else
+                {
+                    PicBox_ReturnToday.Visible = false;
+                }
+            }
         }
+        #endregion
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -242,7 +303,7 @@ namespace Calendar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Btn_ReturnToday_Click(object sender, EventArgs e)
+        private void PicBox_ReturnToday_Click(object sender, EventArgs e)
         {
             Cbo_Years.SelectedItem = DateTime.Now.Year.ToString();
             Cbo_Months.SelectedItem = DateTime.Now.Month.ToString();
