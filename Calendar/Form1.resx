@@ -121,7 +121,7 @@
   <data name="PicBox_ReturnToday.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IwAALiMBeKU/dgAAAUlJREFUWEfNlYFNwzAQRbsCK7BCV2AFVmAFVmAFVmAFVmAFVmCFcE/tSVH0VGKn
+        IgAALiIBquLdkgAAAUlJREFUWEfNlYFNwzAQRbsCK7BCV2AFVmAFVmAFVmAFVmAFVmCFcE/tSVH0VGKn
         Ev+kpyYvtnS+s93TsizRqExCZRIqk1CZhMokVCahMgmVSahMQmUSKpNQOclD8VO8FY9XdxiVk5AYQZIk
         a2OGUTkBFSOxr+vvZ2HjhlE5AYkRT8XL5XF5L2zsECoH+SgIEnsucN1uvm3HD6FyAFpJvBadFM9863eq
         ey62c3ehcgdUqtvaCcE3ooJW897tJqjm8OlW+QfsLYLD0C1tSIxYJ031ejEsgKTXc26icgckQDW6tWtY
@@ -132,5 +132,14 @@
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="dragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>107, 17</value>
+  </metadata>
+  <metadata name="dragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>237, 17</value>
+  </metadata>
+  <metadata name="dragControl3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>367, 17</value>
   </metadata>
 </root>

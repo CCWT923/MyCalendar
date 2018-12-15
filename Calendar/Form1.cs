@@ -127,7 +127,7 @@ namespace Calendar
                 calendarBlock.LunarText = lunarDayName;
 
                 //如果是今天
-                if(month == DateTime.Now.Month && (x+1) == DateTime.Now.Day)
+                if(year == DateTime.Now.Year && month == DateTime.Now.Month && (x+1) == DateTime.Now.Day)
                 {
                     calendarBlock.IsToday = true;
                 }
