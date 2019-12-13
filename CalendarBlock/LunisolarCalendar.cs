@@ -32,7 +32,7 @@ namespace CalendarBlock
             //公历字体
             SolorFont = new Font("Arial",13);
             //农历字体
-            LunarFont = new Font("楷体",10);
+            LunarFont = new Font("微软雅黑",9);
             //选中的颜色
             SelectedColor = Color.FromArgb(255,220,220,220);
         }

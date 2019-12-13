@@ -42,6 +42,9 @@ namespace Calendar
             #endregion
         }
         #region 结构体，存储年月日三个数据
+        /// <summary>
+        /// 存储年月日三个数据的结构体
+        /// </summary>
         public struct DateOnly
         {
             public int Year;
@@ -57,6 +60,11 @@ namespace Calendar
         #endregion
 
         #region 返回指定公历日期的农历日期
+        /// <summary>
+        /// 返回指定公历日期的农历日期
+        /// </summary>
+        /// <param name="SolarDate"></param>
+        /// <returns></returns>
         public DateOnly GetLunarDate(DateTime SolarDate)
         {
             DateOnly lunarDate;
@@ -74,6 +82,11 @@ namespace Calendar
         #endregion
 
         #region 获取农历年中的第几天
+        /// <summary>
+        /// 根据指定公历日期获取农历年中的第几天
+        /// </summary>
+        /// <param name="SolarDate"></param>
+        /// <returns></returns>
         public int GetDayOfLunarYear(DateTime SolarDate)
         {
             return clc.GetDayOfYear(SolarDate);
@@ -95,6 +108,12 @@ namespace Calendar
         #endregion
 
         #region 获取天干、地支、生肖、月份、日期、六十甲子
+        /// <summary>
+        /// 获取农历数据：天干、地址、生肖、月份、日期、甲子
+        /// </summary>
+        /// <param name="lunarType"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public string GetLunarData( LunarDataType lunarType, int index)
         {
             if(lunarType == LunarDataType.CELESTIANSTEM)
@@ -186,7 +205,7 @@ namespace Calendar
         #region 计算指定年份的干支
         public string GetGanZhi(int year)
         {
-            return GetLunarData(LunarDataType.SEXAGENARYYEAR, clc.GetSexagenaryYear(new DateTime(year, 1, 1)) - 1);
+            return GetLunarData(LunarDataType.SEXAGENARYYEAR, clc.GetSexagenaryYear(new DateTime(year, 1, 1)));
         }
         #endregion
     }

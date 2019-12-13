@@ -241,17 +241,17 @@ namespace Calendar
             FillTable(DateTime.Now.Year, Cbo_Months.SelectedIndex + 1, 1);
             if(int.Parse(Cbo_Months.SelectedItem.ToString()) != DateTime.Now.Month)
             {
-                PicBox_ReturnToday.Visible = true;
+                Btn_BackToToday.Visible = true;
             }
             else
             {
                 if(int.Parse(Cbo_Years.SelectedItem.ToString()) != DateTime.Now.Year)
                 {
-                    PicBox_ReturnToday.Visible = true;
+                    Btn_BackToToday.Visible = true;
                 }
                 else
                 {
-                    PicBox_ReturnToday.Visible = false;
+                    Btn_BackToToday.Visible = false;
                 }
             }
         }
@@ -269,17 +269,17 @@ namespace Calendar
             FillTable(int.Parse(Cbo_Years.SelectedItem.ToString()), Cbo_Months.SelectedIndex + 1, 1);
             if (int.Parse(Cbo_Years.SelectedItem.ToString()) != DateTime.Now.Year)
             {
-                PicBox_ReturnToday.Visible = true;
+                Btn_BackToToday.Visible = true;
             }
             else
             {
                 if (int.Parse(Cbo_Months.SelectedItem.ToString()) != DateTime.Now.Month)
                 {
-                    PicBox_ReturnToday.Visible = true;
+                    Btn_BackToToday.Visible = true;
                 }
                 else
                 {
-                    PicBox_ReturnToday.Visible = false;
+                    Btn_BackToToday.Visible = false;
                 }
             }
         }
@@ -292,10 +292,14 @@ namespace Calendar
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LunarDate lunar = new LunarDate();
             int day = DateTime.Now.Day;
             Lbl_SolarDayInfo.Text = day < 10 ? "0" + day : day.ToString();
             Lbl_SolarDate.Text = DateTime.Now.ToString("yyyy年MM月dd日");
             Lbl_CNWeekName.Text = "星期" + GetCNWeekName(GetWeekNumber(DateTime.Now.Year, DateTime.Now.Month, day));
+            var d = lunar.GetLunarDate(DateTime.Now);
+            Lbl_LunarDate.Text = "农历 " + lunar.GetLunarData(LunarDate.LunarDataType.MONTHNAME,d.Month - 1) + lunar.GetLunarData(LunarDate.LunarDataType.DAYNAME,d.Day - 1);
+            Lbl_LunarYearName.Text = lunar.GetGanZhi(DateTime.Now.Year) + " 年";
             
         }
         /// <summary>
@@ -303,7 +307,7 @@ namespace Calendar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PicBox_ReturnToday_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Cbo_Years.SelectedItem = DateTime.Now.Year.ToString();
             Cbo_Months.SelectedItem = DateTime.Now.Month.ToString();

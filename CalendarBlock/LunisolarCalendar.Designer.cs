@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(70, 70);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(52, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.MouseEnter += new System.EventHandler(this.MouseEnter_Hightlight);
             this.tableLayoutPanel1.MouseLeave += new System.EventHandler(this.MouseLeave_NotHighlight);
@@ -63,10 +63,11 @@
             this.lbl_Solar.AutoSize = true;
             this.lbl_Solar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Solar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_Solar.Font = new System.Drawing.Font("宋体", 10F);
-            this.lbl_Solar.Location = new System.Drawing.Point(4, 1);
+            this.lbl_Solar.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.lbl_Solar.Location = new System.Drawing.Point(3, 1);
+            this.lbl_Solar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Solar.Name = "lbl_Solar";
-            this.lbl_Solar.Size = new System.Drawing.Size(61, 42);
+            this.lbl_Solar.Size = new System.Drawing.Size(45, 33);
             this.lbl_Solar.TabIndex = 1;
             this.lbl_Solar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Solar.MouseEnter += new System.EventHandler(this.MouseEnter_Hightlight);
@@ -77,9 +78,11 @@
             this.lbl_Lunar.AutoSize = true;
             this.lbl_Lunar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Lunar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_Lunar.Location = new System.Drawing.Point(4, 43);
+            this.lbl_Lunar.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Lunar.Location = new System.Drawing.Point(3, 34);
+            this.lbl_Lunar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Lunar.Name = "lbl_Lunar";
-            this.lbl_Lunar.Size = new System.Drawing.Size(61, 23);
+            this.lbl_Lunar.Size = new System.Drawing.Size(45, 18);
             this.lbl_Lunar.TabIndex = 2;
             this.lbl_Lunar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Lunar.MouseEnter += new System.EventHandler(this.MouseEnter_Hightlight);
@@ -91,22 +94,22 @@
             this.lbl_Note.BackColor = System.Drawing.Color.Yellow;
             this.lbl_Note.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Note.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_Note.Location = new System.Drawing.Point(1, 66);
+            this.lbl_Note.Location = new System.Drawing.Point(1, 52);
             this.lbl_Note.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Note.Name = "lbl_Note";
-            this.lbl_Note.Size = new System.Drawing.Size(67, 4);
+            this.lbl_Note.Size = new System.Drawing.Size(49, 4);
             this.lbl_Note.TabIndex = 3;
             this.lbl_Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LunisolarCalendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "LunisolarCalendar";
-            this.Size = new System.Drawing.Size(70, 70);
+            this.Size = new System.Drawing.Size(52, 56);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
